@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Vendas</title>
+    <title>Laravel 5.5 Base Project</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -30,17 +30,13 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        Vendas
+                        Laravel 5.5 Base Project
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ route('home.clients.index') }}">Clientes</a></li>
-                        <li><a href="{{ route('home.orders.index') }}">Pedidos</a></li>
-                        <li><a href="{{ route('home.brands.index') }}">Marcas</a></li>
-                        <li><a href="{{ route('home.products.index') }}">Produtos</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
