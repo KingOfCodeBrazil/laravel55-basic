@@ -62,6 +62,22 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .help {
+                border-radius: 12px;
+                background-color: #f1f1f1;
+                padding: 30px;
+                margin-top: 30px;
+                font-family: 'Arial', sans-serif;
+            }
+
+            ol {
+                text-align: left;
+            }
+
+            li {
+                margin-bottom: 10px;
+            }
         </style>
     </head>
     <body>
@@ -89,6 +105,23 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+
+                <div class="m-b-md help">
+                    <h4>Steps to run this project:</h4>
+                    <br>
+                    <ol>
+                        <li>Create a new <b>.env</b> file using <b>.env.example</b> file as example. Configure your database on this file.</li>
+                        <li>Run <b>composer install</b> to install all PHP libs and the Laravel Framework</li>
+                        <li>Run <b>npm install</b> to install all Javascript libs</li>
+                        <li>Run <b>npm run dev</b> to compile the Javascript assets</li>
+                        <li>Run <b>php artisan key:generate</b> to generate the application key</li>
+                        <li>Run <b>php artisan storage:link</b> to craete the symbolic link for file uploads on the public folder</li>
+                        <li>Run <b>php artisan migrate:fresh</b> to generate the application key</li>
+                        <li>And finally, run <b>php artisan serve</b> to run the application</li>
+                        <li>You can access using the user <b>admin@admin.com</b>, with password <b>admin</b>, created with the migrations using the --seed option above.</li>
+                    </ol>
+                </div>
+
             </div>
         </div>
     </body>
