@@ -19,7 +19,7 @@ class UserController extends Controller
         $this->authorize('list', User::class);
 
         $search = $request->get('search', '');
-        $users = User::paginate();
+        $users = User::search($search)->paginate(10);
 
         return view('home.users.index')
             ->with('users', $users)

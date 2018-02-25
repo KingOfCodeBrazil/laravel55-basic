@@ -19,7 +19,7 @@ class RoleController extends Controller {
         $this->authorize('list', Role::class);
 
         $search = $request->get('search', '');
-        $roles = Role::search($search)->paginate();
+        $roles = Role::search($search)->paginate(10);
 
         return view('home.roles.index')
             ->with('roles', $roles)

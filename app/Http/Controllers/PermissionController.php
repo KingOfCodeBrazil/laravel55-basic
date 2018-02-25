@@ -19,7 +19,7 @@ class PermissionController extends Controller
         $this->authorize('list', Permission::class);
 
         $search = $request->get('search', '');
-        $permissions = Permission::search($search)->paginate();
+        $permissions = Permission::search($search)->paginate(10);
 
         return view('home.permissions.index')
             ->with('permissions', $permissions)
