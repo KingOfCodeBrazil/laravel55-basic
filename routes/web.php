@@ -19,4 +19,9 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth', 'prefix' => 'home', 'as' => 'home.'], function() {
     Route::get('/', 'HomeController@index');
+    
+    /** Users and Permissions */
+    Route::resource('users', 'UserController');
+    Route::resource('roles', 'RoleController');
+    Route::resource('permissions', 'PermissionController');
 });

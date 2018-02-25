@@ -37,6 +37,15 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
+                        @can('list roles')
+                            <li><a href="{{route('home.roles.index')}}">Roles</a></li>
+                        @endcan
+                        @can('list permissions')
+                            <li><a href="{{route('home.permissions.index')}}">Permissions</a></li>
+                        @endcan
+                        @can('list users')
+                            <li><a href="{{route('home.users.index')}}">Users</a></li>
+                        @endcan
                     </ul>
 
                     <!-- Right Side Of Navbar -->

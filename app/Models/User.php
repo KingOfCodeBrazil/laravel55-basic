@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Nicolaslopezj\Searchable\SearchableTrait as Searchable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasRoles, Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -19,6 +21,18 @@ class User extends Authenticatable
     ];
 
     /**
+     * The attributes that are searchable.
+     *
+     * @var array
+     */
+    protected $searchable = [
+        'columns' => [
+            'users.name' => 10,
+            'users.email' => 10,
+        ]
+    ];
+
+    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
@@ -26,4 +40,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function assignRoles($roles)
+    {
+        $allRoles = Role::find($roles) ?? [];
+        $this->syncRoles($allRoles);
+    }
 }
